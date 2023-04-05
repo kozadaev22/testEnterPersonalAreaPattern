@@ -31,7 +31,7 @@ public class DataGenerator {
     private DataGenerator() {
     }
 
-    private static void sendRequest(String user) {
+    private static void sendRequest(RegistrationDto user) {
         given()
                 .spec(requestSpec)
                 .body(user)
@@ -62,7 +62,7 @@ public class DataGenerator {
 
         public static RegistrationDto getRegisteredUser(String status) {
            var regiteredUser = getUser(status);
-           sendRequest(String.valueOf(regiteredUser));
+           sendRequest(regiteredUser);
             return regiteredUser;
         }
     }
